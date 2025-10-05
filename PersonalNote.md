@@ -19,7 +19,8 @@
 
 ## 2. Linear Regression
 - **Khái niệm**: Linear Regression giả định mối quan hệ tuyến tính giữa các features và target. Nó tìm đường thẳng (trong không gian 2D) hoặc siêu phẳng (trong không gian đa chiều) sao cho tổng sai số giữa dự đoán và thực tế là nhỏ nhất. Có hai loại: Simple Linear Regression (một feature) và Multiple Linear Regression (nhiều features). Ưu điểm: Dễ hiểu, tính toán nhanh. Nhược điểm: Không phù hợp với dữ liệu phi tuyến tính.
-![Alt text](https://i0.wp.com/statisticsbyjim.com/wp-content/uploads/2017/04/flp_linear.gif?resize=576%2C384)
+
+![Alt text](https://miro.medium.com/max/985/1*KP0U9y1o4QUaFMwUsXqXyw.png)
 
 - **Công thức**:
   \[
@@ -43,8 +44,34 @@
 - **Tối ưu hóa**: Gradient Descent bắt đầu từ weights ngẫu nhiên, tính gradient của loss, và di chuyển ngược chiều gradient để giảm loss. Có các biến thể như Stochastic GD (dùng một mẫu) hoặc Mini-batch GD (dùng batch nhỏ) để tăng tốc.
 
 **Ví dụ thực tế**: Dự đoán lương dựa trên kinh nghiệm. Giả sử dữ liệu: Kinh nghiệm (x) = [1, 2, 3, 4] năm, Lương (y) = [30k, 40k, 50k, 60k] USD. Mô hình có thể tìm \( y = 20k + 10k \times x \). Với x=5, dự đoán y=70k. Nếu thêm feature như bằng cấp, thành Multiple Linear Regression.
+**Code minh họa**
+<pre>
+import numpy as np
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
 
+# Dữ liệu ví dụ
+X = np.array([[1], [2], [3], [4]])  # Kinh nghiệm (năm)
+y = np.array([30, 40, 50, 60])      # Lương (nghìn USD)
 
+# Huấn luyện mô hình
+model = LinearRegression()
+model.fit(X, y)
+
+# Dự đoán
+X_test = np.array([[5]])
+y_pred = model.predict(X_test)
+print(f"Dự đoán lương cho 5 năm kinh nghiệm: {y_pred[0]:.1f}k USD")
+
+# Vẽ biểu đồ
+plt.scatter(X, y, color='blue', label='Dữ liệu')
+plt.plot(X, model.predict(X), color='red', label='Đường hồi quy')
+plt.xlabel('Kinh nghiệm (năm)')
+plt.ylabel('Lương (nghìn USD)')
+plt.legend()
+plt.show()
+</pre>
+![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424231842940321855/wNfz7Ux9kwwTwAAAABJRU5ErkJggg.png?ex=68e332c4&is=68e1e144&hm=14af6aaff80c1ccfcd9d1915c151afe9de2eb6502691a557ec636a284e93b52a&=&format=webp&quality=lossless&width=704&height=541)
 ---
 
 
