@@ -1,4 +1,4 @@
-
+\text{Loss} = \text{MSE} + \lambda \sum_{i=1}^{n} |w_i|
 
 # **Ghi chú cá nhân**
 ## **1. Giới thiệu về Hồi quy (Regression)**
