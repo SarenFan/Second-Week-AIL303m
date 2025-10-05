@@ -1,15 +1,4 @@
 
-- **Ridge Regression (L2 Regularization)**: Phạt tổng bình phương của các trọng số.
-$$
-\text{Loss} = \text{MSE} + \lambda \sum_{i=1}^{n} w_i^2
-$$
-
-- **Elastic Net**: Kết hợp cả L1 và L2.
-$$
-\text{Loss} = \text{MSE} + \lambda_1 \sum_{i=1}^{n} |w_i| + \lambda_2 \sum_{i=1}^{n} w_i^2
-$$
-
----
 
 # **Ghi chú cá nhân**
 ## **1. Giới thiệu về Hồi quy (Regression)**
