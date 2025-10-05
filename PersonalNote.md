@@ -45,7 +45,7 @@
 
 **Ví dụ thực tế**: Dự đoán lương dựa trên kinh nghiệm. Giả sử dữ liệu: Kinh nghiệm (x) = [1, 2, 3, 4] năm, Lương (y) = [30k, 40k, 50k, 60k] USD. Mô hình có thể tìm \( y = 20k + 10k \times x \). Với x=5, dự đoán y=70k. Nếu thêm feature như bằng cấp, thành Multiple Linear Regression.
 **Code minh họa**
-<pre>
+```python
 import numpy as np
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
@@ -70,7 +70,7 @@ plt.xlabel('Kinh nghiệm (năm)')
 plt.ylabel('Lương (nghìn USD)')
 plt.legend()
 plt.show()
-</pre>
+```
 ![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424231842940321855/wNfz7Ux9kwwTwAAAABJRU5ErkJggg.png?ex=68e332c4&is=68e1e144&hm=14af6aaff80c1ccfcd9d1915c151afe9de2eb6502691a557ec636a284e93b52a&=&format=webp&quality=lossless&width=704&height=541)
 ---
 
