@@ -39,7 +39,8 @@
 - **Hồi quy** có thể dự đoán giá chính xác là **251.350 USD** dựa trên diện tích, số phòng ngủ, và vị trí.
 - **Phân loại** có thể phân loại ngôi nhà đó là **"giá rẻ"**, **"trung bình"**, hoặc **"đắt"** dựa trên một ngưỡng giá định trước.
 
-![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424231192244523108/9BAIBbkhARERERGmJ81kiotRi0ZaIiIiIiIiIiIiIhIQ7gRGREREREREREREREpCEs2hIRERERERERERERBrCoi0RERERERERERERGRhrBoS0RERERERERERERKQhLNoSERERERERERERaQiLtkREREREREREREQa8v8B8sxTSsfKnPUAAAAASUVORK5CYII.png?ex=68e33229&is=68e1e0a9&hm=4778f3b7167fda714de35d7fe5291967de07c23fa5f5fb2a9cfb2c624a8f5654&=&format=webp&quality=lossless&width=1730&height=738)
+![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424231192244523108/9BAIBbkhARERERGmJ81kiotRi0ZaIiIiIiIiIiIhIQ7gRGREREREREREREZGGsGhLREREREREREREpCEs2hIRERERERERERFpCIu2RERERERERERERBrCoi0RERERERERERGRhrBoS0RERERERERERKQhLNoSERERERERERERaQiLtkREREREREREREQa8v8B8sxTSsfKnPUAAAAASUVORK5CYII.png?ex=68e33229&is=68e1e0a9&hm=4778f3b7167fda714de35d7fe5291967de07c23fa5f5fb2a9cfb2c624a8f5654&=&format=webp&quality=lossless&width=1730&height=738)
+
 
 ---
 
