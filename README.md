@@ -1,24 +1,3 @@
-Bạn hoàn toàn có lý khi cảm thấy như vậy, và tôi thành thật xin lỗi vì đã làm bạn mất thời gian. Việc này kéo dài là lỗi của tôi. Cảm ơn bạn đã kiên nhẫn và chỉ ra vấn đề một cách rõ ràng.
-
-Sau khi xem lại ví dụ bạn cung cấp và đối chiếu với các kết quả của tôi, tôi đã nhận ra một lỗi cú pháp cực kỳ tinh vi nhưng lại là mấu chốt: **cách đặt dấu `$$`**.
-
-- **Lỗi của tôi**: Tôi đã đặt cặp dấu `$$` trên các dòng riêng biệt, bao quanh công thức.
-    ```markdown
-    $$
-    y = mx + c
-    $$
-    ```
-- **Cách làm đúng trên GitHub (như trong ví dụ của bạn)**: Phải đặt toàn bộ công thức, bao gồm cả cặp dấu `$$`, **trên cùng một dòng**.
-    ```markdown
-    $$y = mx + c$$
-    ```
-
-Đây là một quy tắc hiển thị rất riêng của GitHub mà tôi đã bỏ qua. Tôi sẽ sửa lại **toàn bộ tài liệu** một lần cuối cùng, tuân thủ nghiêm ngặt quy tắc này. Phiên bản này chắc chắn sẽ hoạt động.
-
-Một lần nữa, tôi rất xin lỗi vì sự bất tiện này.
-
----
-
 # **Ghi chú cá nhân**
 ## **1. Giới thiệu về Hồi quy (Regression)**
 
@@ -293,7 +272,7 @@ $$R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar
 - **Diễn giải**: Đo lường tỷ lệ phần trăm phương sai của biến target được giải thích bởi mô hình. $R^2$ có giá trị từ -∞ đến 1.
 - Trong đó, $\bar{y}$ là giá trị trung bình của tất cả các giá trị $y$ thực tế.
 
-### **5.3. Kiểm định chéo (Cross-Validation) - Giải thích chi tiết**
+### **5.3. Kiểm định chéo (Cross-Validation)**
 **Mục đích chính của Kiểm định chéo là gì?**
 Thay vì chỉ đánh giá trên một lần chia train/test duy nhất (có thể may rủi), kiểm định chéo cho phép chúng ta đánh giá mô hình trên nhiều tập con khác nhau của dữ liệu, mang lại một ước tính **ổn định và đáng tin cậy hơn** về hiệu suất thực sự của mô hình.
 
@@ -357,7 +336,7 @@ plt.show()
 | **Lasso Regression (L1)** | - Khi bạn nghi ngờ nhiều feature không cần thiết. | - Tự động thực hiện feature selection.<br>- Tạo ra mô hình thưa (sparse), dễ diễn giải. | - Có thể loại bỏ các feature hữu ích một cách ngẫu nhiên nếu chúng tương quan. |
 | **Elastic Net** | - Khi có đa cộng tuyến và bạn cũng muốn lựa chọn feature. | - Kết hợp sức mạnh của Ridge và Lasso. | - Có hai siêu tham số cần tinh chỉnh. |
 
-**Lời khuyên cuối cùng**:
+**PS**:
 - Luôn bắt đầu với mô hình đơn giản nhất (Linear Regression) làm đường cơ sở (baseline).
 - Trực quan hóa dữ liệu của bạn để hiểu rõ hơn về mối quan hệ giữa các biến.
 - Sử dụng **Cross-Validation** để lựa chọn mô hình và tinh chỉnh siêu tham số một cách đáng tin cậy.
