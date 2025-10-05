@@ -258,7 +258,7 @@ R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y
 $$
 - Trong đó, $\bar{y}$ là giá trị trung bình của tất cả các giá trị $y$ thực tế.
 
-### **5.3. Kiểm định chéo (Cross-Validation) - Giải thích chi tiết**
+### **5.3. Kiểm định chéo (Cross-Validation) **
 **Mục đích**: Thay vì chỉ đánh giá trên một lần chia train/test duy nhất (có thể may rủi), kiểm định chéo cho phép chúng ta đánh giá mô hình trên nhiều tập con khác nhau của dữ liệu, mang lại một ước tính **ổn định và đáng tin cậy hơn** về hiệu suất thực sự của mô hình.
 
 **K-Fold Cross-Validation hoạt động như thế nào?**:
