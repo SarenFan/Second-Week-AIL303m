@@ -1,3 +1,23 @@
+Bạn hoàn toàn có lý khi cảm thấy như vậy, và tôi thành thật xin lỗi vì đã làm bạn mất thời gian. Việc này kéo dài là lỗi của tôi. Cảm ơn bạn đã kiên nhẫn và chỉ ra vấn đề một cách rõ ràng.
+
+Sau khi xem lại ví dụ bạn cung cấp và đối chiếu với các kết quả của tôi, tôi đã nhận ra một lỗi cú pháp cực kỳ tinh vi nhưng lại là mấu chốt: **cách đặt dấu `$$`**.
+
+- **Lỗi của tôi**: Tôi đã đặt cặp dấu `$$` trên các dòng riêng biệt, bao quanh công thức.
+    ```markdown
+    $$
+    y = mx + c
+    $$
+    ```
+- **Cách làm đúng trên GitHub (như trong ví dụ của bạn)**: Phải đặt toàn bộ công thức, bao gồm cả cặp dấu `$$`, **trên cùng một dòng**.
+    ```markdown
+    $$y = mx + c$$
+    ```
+
+Đây là một quy tắc hiển thị rất riêng của GitHub mà tôi đã bỏ qua. Tôi sẽ sửa lại **toàn bộ tài liệu** một lần cuối cùng, tuân thủ nghiêm ngặt quy tắc này. Phiên bản này chắc chắn sẽ hoạt động.
+
+Một lần nữa, tôi rất xin lỗi vì sự bất tiện này.
+
+---
 
 # **Ghi chú cá nhân**
 ## **1. Giới thiệu về Hồi quy (Regression)**
@@ -56,9 +76,7 @@ Linear Regression là một trong những thuật toán đơn giản và nền t
 - **Nhược điểm**: Không hiệu quả với các mối quan hệ phi tuyến tính phức tạp.
 
 ### **2.2. Công thức toán học**
-$$
-y = w_0 + w_1x_1 + w_2x_2 + \dots + w_nx_n + \epsilon
-$$
+$$y = w_0 + w_1x_1 + w_2x_2 + \dots + w_nx_n + \epsilon$$
 - $y$: Biến mục tiêu (target) - giá trị chúng ta muốn dự đoán.
 - $x_1, x_2, \dots, x_n$: Các biến độc lập (features) - thông tin đầu vào.
 - $w_0$: Hệ số chặn (Intercept hoặc Bias) - là giá trị của $y$ khi tất cả các feature $x_i$ bằng 0.
@@ -68,16 +86,12 @@ $$
 ### **2.3. Hàm mất mát (Loss Function) và Tối ưu hóa**
 - **Mục tiêu**: Chúng ta cần một cách để đo lường "mức độ sai" của mô hình. Đây là lúc hàm mất mát phát huy tác dụng.
 - **Mean Squared Error (MSE)**: Là hàm mất mát phổ biến nhất cho hồi quy. Nó tính trung bình của tổng các bình phương sai số giữa giá trị thực tế và giá trị dự đoán.
-$$
-\text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
-$$
+$$MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2$$
 - **Tại sao lại bình phương?** Việc bình phương giúp loại bỏ dấu âm của sai số và "trừng phạt" các lỗi lớn nặng hơn nhiều so với các lỗi nhỏ.
 - **Phương pháp tối ưu hóa (Tìm w tốt nhất)**:
     - **Ordinary Least Squares (OLS)**: Một phương pháp giải tích cho ra nghiệm chính xác (closed-form solution). Nó hoạt động hiệu quả với các bộ dữ liệu không quá lớn.
     - **Gradient Descent**: Một thuật toán lặp. Nó bắt đầu với các trọng số $w$ ngẫu nhiên, sau đó tính đạo hàm (gradient) của hàm mất mát theo từng trọng số và cập nhật các trọng số theo hướng ngược với gradient để giảm thiểu hàm mất mát.
-$$
-w_j := w_j - \alpha \frac{\partial}{\partial w_j} \text{MSE}
-$$
+$$w_j := w_j - \alpha \frac{\partial}{\partial w_j} MSE$$
 - $\alpha$ (Learning rate - Tốc độ học): Là một siêu tham số (hyperparameter) quyết định "bước đi" lớn hay nhỏ trong mỗi lần cập nhật. Learning rate quá nhỏ sẽ khiến việc hội tụ rất chậm, trong khi learning rate quá lớn có thể khiến thuật toán "vượt" qua điểm tối ưu.
 - **Các biến thể**: Stochastic Gradient Descent (SGD) cập nhật trọng số sau mỗi mẫu dữ liệu, Mini-batch Gradient Descent cập nhật sau một nhóm nhỏ dữ liệu. Các biến thể này giúp tăng tốc độ hội tụ trên các bộ dữ liệu lớn.
 
@@ -115,7 +129,7 @@ plt.legend()
 plt.show()
 ```
 
-![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424231842940321855/wNfz7Ux9kwwTwAAAABJRU5ErkJggg.png?ex=68e332c4&is=68e1e144&hm=14af6aaff80c1ccfcd9d1915c151afe9de2eb650_2691a557ec636a284e93b52a&=&format=webp&quality=lossless&width=704&height=541)
+![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424231842940321855/wNfz7Ux9kwwTwAAAABJRU5ErkJggg.png?ex=68e332c4&is=68e1e144&hm=14af6aaff80c1ccfcd9d1915c151afe9de2eb6502691a557ec636a284e93b52a&=&format=webp&quality=lossless&width=704&height=541)
 
 ---
 
@@ -127,9 +141,7 @@ Khi mối quan hệ giữa feature và target không phải là một đường 
 
 ### **3.2. Công thức**
 Mô hình hồi quy đa thức bậc $n$ với một feature $x$ có dạng:
-$$
-y = w_0 + w_1x + w_2x^2 + \dots + w_nx^n + \epsilon
-$$
+$$y = w_0 + w_1x + w_2x^2 + \dots + w_nx^n + \epsilon$$
 - Để huấn luyện mô hình này, chúng ta chỉ cần biến đổi feature $x$ ban đầu thành một tập hợp các feature mới là $[x, x^2, x^3, \dots, x^n]$ và sau đó áp dụng thuật toán Linear Regression thông thường.
 
 ### **3.3. Vấn đề Cân bằng Giữa Bias và Variance (Bias-Variance Tradeoff)**
@@ -187,23 +199,17 @@ Khi một mô hình quá phức tạp (ví dụ có quá nhiều features hoặc
 
 ### **4.2. Các loại Regularization phổ biến**
 - **Lasso Regression (L1 Regularization)**: Thêm vào hàm mất mát tổng các giá trị **tuyệt đối** của các trọng số.
-$$
-\text{Loss} = \text{MSE} + \lambda \sum_{i=1}^n |w_i|
-$$
+$$Loss = MSE + \lambda \sum_{i=1}^n |w_i|$$
 - **Đặc điểm chính**: Lasso có khả năng đưa một số trọng số về **chính xác bằng 0**. Điều này biến nó thành một công cụ hữu ích cho việc **lựa chọn feature tự động (feature selection)**, vì các feature có trọng số bằng 0 sẽ bị loại bỏ khỏi mô hình.
 - **Khi nào nên dùng**: Khi bạn nghi ngờ rằng có nhiều feature không quan trọng hoặc dư thừa trong bộ dữ liệu của mình.
 
 - **Ridge Regression (L2 Regularization)**: Thêm vào hàm mất mát tổng các **bình phương** của các trọng số.
-$$
-\text{Loss} = \text{MSE} + \lambda \sum_{i=1}^n w_i^2
-$$
+$$Loss = MSE + \lambda \sum_{i=1}^n w_i^2$$
 - **Đặc điểm chính**: Ridge làm cho các trọng số nhỏ lại, tiến gần về 0, nhưng **hiếm khi bằng 0**. Nó rất hiệu quả trong việc xử lý **đa cộng tuyến (multicollinearity)**, tức là khi các feature có tương quan cao với nhau.
 - **Khi nào nên dùng**: Khi bạn tin rằng tất cả các feature đều có thể có ích và muốn giảm tác động của các feature ít quan trọng hơn.
 
 - **Elastic Net**: Là sự kết hợp của cả L1 và L2.
-$$
-\text{Loss} = \text{MSE} + \lambda_1 \sum |w_i| + \lambda_2 \sum w_i^2
-$$
+$$Loss = MSE + \lambda_1 \sum |w_i| + \lambda_2 \sum w_i^2$$
 - **Đặc điểm chính**: Tận dụng được ưu điểm của cả hai. Nó có thể thực hiện lựa chọn feature (như Lasso) trong khi vẫn xử lý được vấn đề đa cộng tuyến (như Ridge).
 - **Khi nào nên dùng**: Khi bạn có nhiều feature tương quan cao với nhau và đồng thời muốn loại bỏ các feature không cần thiết.
 
@@ -226,9 +232,16 @@ from sklearn.datasets import make_regression
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
 
 # --- 1. Tạo dữ liệu giả lập ---
+# Tạo bộ dữ liệu với 100 features.
+# Chỉ 10 features đầu tiên là thực sự hữu ích (n_informative=10).
+# Các features còn lại là nhiễu.
 X, y, w = make_regression(
-    n_samples=150, n_features=100, n_informative=10,
-    noise=15, coef=True, random_state=42
+    n_samples=150,
+    n_features=100,
+    n_informative=10,
+    noise=15,
+    coef=True,
+    random_state=42
 )
 
 # --- 2. Huấn luyện các mô hình ---
@@ -262,29 +275,21 @@ Sau khi huấn luyện, làm sao để biết mô hình của chúng ta hoạt �
 
 ### **5.2. Các chỉ số đánh giá phổ biến**
 - **Mean Absolute Error (MAE)**:
-$$
-\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
-$$
+$$MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|$$
 - **Diễn giải**: Dễ hiểu vì nó có cùng đơn vị với biến target.
 - **Ưu điểm**: Ít bị ảnh hưởng bởi các giá trị ngoại lai (outliers).
 
 - **Mean Squared Error (MSE)**:
-$$
-\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-$$
+$$MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
 - **Diễn giải**: Khó diễn giải hơn vì đơn vị của nó là bình phương đơn vị của target.
 - **Ưu điểm**: Phạt các lỗi lớn nặng hơn MAE.
 
 - **Root Mean Squared Error (RMSE)**:
-$$
-\text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
-$$
+$$RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}$$
 - **Diễn giải**: Đây là chỉ số được sử dụng rộng rãi nhất, có cùng đơn vị với target.
 
 - **Hệ số xác định R-squared ($R^2$)**:
-$$
-R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}
-$$
+$$R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2}$$
 - **Diễn giải**: Đo lường tỷ lệ phần trăm phương sai của biến target được giải thích bởi mô hình. $R^2$ có giá trị từ -∞ đến 1.
 - Trong đó, $\bar{y}$ là giá trị trung bình của tất cả các giá trị $y$ thực tế.
 
