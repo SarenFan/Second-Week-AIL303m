@@ -20,8 +20,6 @@
 ## 2. Linear Regression
 - **Khái niệm**: Linear Regression giả định mối quan hệ tuyến tính giữa các features và target. Nó tìm đường thẳng (trong không gian 2D) hoặc siêu phẳng (trong không gian đa chiều) sao cho tổng sai số giữa dự đoán và thực tế là nhỏ nhất. Có hai loại: Simple Linear Regression (một feature) và Multiple Linear Regression (nhiều features). Ưu điểm: Dễ hiểu, tính toán nhanh. Nhược điểm: Không phù hợp với dữ liệu phi tuyến tính.
 
-![Alt text](https://miro.medium.com/max/985/1*KP0U9y1o4QUaFMwUsXqXyw.png)
-
 - **Công thức**:
   \[
   y = w_0 + w_1x_1 + w_2x_2 + \dots + w_nx_n + \epsilon
@@ -147,9 +145,72 @@ plt.show()
 - **Tham số \( \lambda \)**: Lambda (alpha) kiểm soát mức phạt. Lambda=0: Không regularization (linear regression). Lambda lớn: Underfitting. Chọn lambda qua cross-validation.
 
 **Ví dụ thực tế**: Trong dự đoán giá nhà với 100 features (diện tích, phòng, tuổi nhà, màu sắc,...). Lasso có thể loại bỏ "màu sắc" (weight=0) vì không quan trọng, còn Ridge làm weight của features ít ảnh hưởng nhỏ lại.
+**Code**
+```
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_regression
+from sklearn.linear_model import LinearRegression, Ridge, Lasso
 
+# --- 1. Tạo dữ liệu giả lập ---
+# Tạo bộ dữ liệu với 100 features.
+# Chỉ 10 features đầu tiên là thực sự hữu ích (n_informative=10).
+# Các features còn lại là nhiễu.
+X, y, w = make_regression(
+    n_samples=150,
+    n_features=100,
+    n_informative=10,
+    noise=15,
+    coef=True,
+    random_state=42
+)
+
+# --- 2. Huấn luyện các mô hình ---
+
+# a) Mô hình hồi quy tuyến tính (Không có Regularization)
+lr = LinearRegression()
+lr.fit(X, y)
+
+# b) Mô hình Ridge (L2 Regularization)
+# Alpha là tham số điều chỉnh độ mạnh của regularization. Alpha càng lớn, penalty càng mạnh.
+ridge = Ridge(alpha=10)
+ridge.fit(X, y)
+
+# c) Mô hình Lasso (L1 Regularization)
+# Alpha ở đây cũng điều chỉnh độ mạnh.
+lasso = Lasso(alpha=1.0)
+lasso.fit(X, y)
+
+
+# --- 3. Trực quan hóa và so sánh các hệ số (coefficients) ---
+
+# Tạo biểu đồ
+plt.figure(figsize=(14, 8))
+plt.title('So sánh hệ số của các mô hình', fontsize=16)
+
+# Vẽ các hệ số thực tế (ground truth) mà chúng ta đã tạo ra
+plt.plot(w, alpha=0.7, linestyle='none', marker='o', markersize=7, color='red', label='Hệ số thực tế (Ground Truth)')
+
+# Vẽ các hệ số của mô hình Linear Regression
+plt.plot(lr.coef_, alpha=0.6, linestyle='none', marker='s', markersize=7, color='blue', label='Linear Regression (Không Regularization)')
+
+# Vẽ các hệ số của mô hình Ridge
+plt.plot(ridge.coef_, alpha=0.8, linestyle='none', marker='^', markersize=7, color='green', label='Ridge (L2 Regularization)')
+
+# Vẽ các hệ số của mô hình Lasso
+plt.plot(lasso.coef_, alpha=0.9, linestyle='none', marker='x', markersize=7, color='purple', label='Lasso (L1 Regularization)')
+
+
+# Tùy chỉnh biểu đồ
+plt.xlabel('Chỉ số của Feature', fontsize=12)
+plt.ylabel('Giá trị của hệ số (Weight)', fontsize=12)
+plt.legend(fontsize=11)
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.show()
+```
 **Hình ảnh minh họa**: Bảng so sánh Ridge vs Lasso.
 
+![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424237480856518748/rs455xxlNpuV2WxWGRkZauPGjaqoqGjE6xRCCCFEYGhKBegWlRBCCCGEEEIIIYSYMmRPISGEEEIIIYQQQogZSAaFhBBCCCGEEEIIIWYgGRQSQgghhBBCCCGEmIFkUEgIIYQQQgghhBBiBpJBISGEEEIIIYQQQogZSAaFhBBCCCGEEEIIIWYgGRQSQgghhBBCCCGEmIFkUEgIIYQQQgghhBBiBpJBISGEEEIIIYQQQogZSAaFhBBCCCGEEEIIIWYgGRQSQgghhBBCCCGEmIFkUEgIIYQQQgghhBBiBpJBISGEEEIIIYQQQogZ6P8HrAUosrtnbisAAAAASUVORK5CYII.png?ex=68e33804&is=68e1e684&hm=2a19aba7c6ebbb196bc2be7fd7b49f50bd36a2f201fb10113c36a757e6a4b654&=&format=webp&quality=lossless&width=1240&height=760)
 ---
 
 
@@ -180,9 +241,52 @@ plt.show()
 - **Cross-Validation**: K-Fold CV chia dữ liệu thành K folds, huấn luyện trên K-1 folds, test trên 1 fold, lặp K lần. Giúp ước lượng hiệu suất trung bình, tránh overfitting.
 
 **Ví dụ thực tế**: Với mô hình dự đoán giá nhà, MSE=10000 nghĩa là trung bình sai số bình phương 10000 USD². RMSE=100 USD dễ hiểu hơn. Nếu \( R^2 = 0.85 \), mô hình giải thích 85% biến thiên giá nhà.
+**Code**:
+```
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+import matplotlib.pyplot as plt
 
+# --- 1. Tạo dữ liệu giả lập ---
+# Tạo mối quan hệ tuyến tính giữa diện tích và giá nhà, sau đó thêm nhiễu ngẫu nhiên
+np.random.seed(42) # Để đảm bảo kết quả luôn giống nhau mỗi khi chạy
+dien_tich = np.random.rand(100, 1) * 100 + 50  # Tạo 100 ngôi nhà có diện tích từ 50m² đến 150m²
+# Giá nhà = 50 (giá cơ bản) + 3.5 * diện tích + nhiễu
+gia_thuc_te = 50 + 3.5 * dien_tich + np.random.randn(100, 1) * 40
+
+# --- 2. Huấn luyện mô hình hồi quy tuyến tính ---
+model = LinearRegression()
+model.fit(dien_tich, gia_thuc_te)
+
+# --- 3. Lấy kết quả dự đoán từ mô hình ---
+gia_du_doan = model.predict(dien_tich)
+
+# --- 4. Tính toán các chỉ số đánh giá ---
+# Mean Squared Error (MSE)
+mse = mean_squared_error(gia_thuc_te, gia_du_doan)
+
+# Root Mean Squared Error (RMSE)
+rmse = np.sqrt(mse)
+
+# R-squared (R²)
+r2 = r2_score(gia_thuc_te, gia_du_doan)
+
+
+
+# ---  Trực quan hóa kết quả ---
+plt.figure(figsize=(10, 6))
+plt.scatter(dien_tich, gia_thuc_te, color='blue', label='Giá thực tế', alpha=0.6)
+plt.plot(dien_tich, gia_du_doan, color='red', linewidth=2, label='Giá dự đoán bởi mô hình')
+plt.title('Dự đoán giá nhà dựa trên Diện tích', fontsize=16)
+plt.xlabel('Diện tích (m²)', fontsize=12)
+plt.ylabel('Giá nhà (nghìn USD)', fontsize=12)
+plt.legend()
+plt.grid(True)
+plt.show()
+```
 **Hình ảnh minh họa**: Biểu đồ các metrics đánh giá.
-
+![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424238155996856461/jB0rBcuvWbIgAAAABJRU5ErkJggg.png?ex=68e338a5&is=68e1e725&hm=6b123f5fa2a008ce262738b339be49a9fa77f1522558846e918fa7b3f243b33c&=&format=webp&quality=lossless&width=1069&height=694)
 ---
 
 ## 6. Tổng kết
@@ -190,5 +294,3 @@ plt.show()
 - **Polynomial Regression**: Linh hoạt hơn cho dữ liệu cong, nhưng cần kiểm soát degree để tránh overfitting.
 - **Regularization**: Công cụ mạnh mẽ để cân bằng bias-variance, đặc biệt với dữ liệu cao chiều.
 - **Đánh giá**: Luôn dùng nhiều metrics và cross-validation để đảm bảo mô hình robust.
-
-**Lưu ý**: Để hiểu sâu, hãy thử tính tay các công thức trên dữ liệu nhỏ. Nếu cần code ví dụ hoặc biểu đồ tùy chỉnh, hãy cho mình biết!
