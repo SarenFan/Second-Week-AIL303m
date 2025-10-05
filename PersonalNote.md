@@ -88,7 +88,7 @@ plt.show()
 
 **Ví dụ thực tế**: Dự đoán tốc độ xe dựa trên thời gian. Dữ liệu: Thời gian (x) = [1,2,3,4,5], Tốc độ (y) = [10, 20, 25, 20, 10] km/h (hình parabol). Mô hình polynomial degree 2: \( y = 5 + 15x - 2x^2 \). Với x=6, dự đoán y=3 km/h (giảm tốc).
 **Code minh họa**:
-```
+```python
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
 
@@ -146,7 +146,7 @@ plt.show()
 
 **Ví dụ thực tế**: Trong dự đoán giá nhà với 100 features (diện tích, phòng, tuổi nhà, màu sắc,...). Lasso có thể loại bỏ "màu sắc" (weight=0) vì không quan trọng, còn Ridge làm weight của features ít ảnh hưởng nhỏ lại.
 **Code**
-```
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import make_regression
@@ -242,7 +242,7 @@ plt.show()
 
 **Ví dụ thực tế**: Với mô hình dự đoán giá nhà, MSE=10000 nghĩa là trung bình sai số bình phương 10000 USD². RMSE=100 USD dễ hiểu hơn. Nếu \( R^2 = 0.85 \), mô hình giải thích 85% biến thiên giá nhà.
 **Code**:
-```
+```python
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
