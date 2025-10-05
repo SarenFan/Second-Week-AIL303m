@@ -1,0 +1,19 @@
+Project Scenario
+One of the main objectives of this course is to help you gain hands-on experience in communicating insightful and impactful findings to stakeholders. In this project, you will use the tools and techniques you learned throughout this course to train a few linear regressions model on a data set that you feel passionate about, select the regression that best suits your needs, and communicate insights you found from your modelling exercise.
+
+After going through some guided steps, you will have insights that either explain or predict your outcome variable. As the main deliverable, you will submit a report that helps you focus on highlighting your analytical skills and thought process. 
+
+Before you begin, you will need to choose a data set that you feel passionate about. You can brainstorm with your peers about great public data sets using the discussion board in this module.  Follow the instructions in the next section on how to complete and submit your notebook.
+
+Required Sections in your notebook
+
+Data Summary: Describe the dataset size, key variables, and target variable.
+
+Objective of the Analysis: Clearly state what the analysis aims to achieve.
+
+Model Comparison: Compare variations of linear regression and select the best one.
+
+Key Findings: Present meaningful insights that align with the objective.
+
+Limitations and Next Steps: Identify model flaws and outline future improvements
+
