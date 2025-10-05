@@ -89,9 +89,36 @@ plt.show()
 - **Vấn đề**: Overfitting xảy ra khi mô hình học noise thay vì pattern thực, dẫn đến hiệu suất kém trên dữ liệu mới. Underfitting là khi mô hình quá đơn giản, bỏ lỡ pattern. Để chọn degree tối ưu, dùng cross-validation.
 
 **Ví dụ thực tế**: Dự đoán tốc độ xe dựa trên thời gian. Dữ liệu: Thời gian (x) = [1,2,3,4,5], Tốc độ (y) = [10, 20, 25, 20, 10] km/h (hình parabol). Mô hình polynomial degree 2: \( y = 5 + 15x - 2x^2 \). Với x=6, dự đoán y=3 km/h (giảm tốc).
+**Code minh họa**:
+```
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.pipeline import make_pipeline
 
+# Dữ liệu ví dụ
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([10, 20, 25, 20, 10])
+
+# Tạo mô hình Polynomial Regression (degree=2)
+polyreg = make_pipeline(PolynomialFeatures(degree=2), LinearRegression())
+polyreg.fit(X, y)
+
+# Dự đoán
+X_test = np.array([[6]])
+y_pred = polyreg.predict(X_test)
+print(f"Dự đoán tốc độ tại t=6: {y_pred[0]:.1f} km/h")
+
+# Vẽ biểu đồ
+X_plot = np.linspace(1, 6, 100).reshape(-1, 1)
+y_plot = polyreg.predict(X_plot)
+plt.scatter(X, y, color='blue', label='Dữ liệu')
+plt.plot(X_plot, y_plot, color='red', label='Đường polynomial')
+plt.xlabel('Thời gian (s)')
+plt.ylabel('Tốc độ (km/h)')
+plt.legend()
+plt.show()
+```
 **Hình ảnh minh họa**: Biểu đồ đường cong polynomial regression.
-
+![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424234272943898664/WMHAfS8LOMQAAAABJRU5ErkJggg.png?ex=68e33507&is=68e1e387&hm=995da0e2cd28284cc35b32bc575cb2bd437a65966a2b94c587c0813ef99126c8&=&format=webp&quality=lossless&width=708&height=541)
 ---
 
 
