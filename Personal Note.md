@@ -109,7 +109,7 @@ plt.legend()
 plt.show()
 ```
 
-![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424231842940321855/wNfz7Ux9kwwTwAAAABJRU5ErkJggg.png?ex=68e332c4&is=68e1e144&hm=14af6aaff80c1ccfcd9d1915c151afe9de2eb6502691a557ec636a284e93b52a&=&format=webp&quality=lossless&width=704&height=541)
+![Alt text](https://github.com/SarenFan/Second-Week-AIL303m/blob/main/Resource/wNfz7Ux9kwwTwAAAABJRU5ErkJggg.webp?raw=true)
 
 ---
 
@@ -167,7 +167,7 @@ plt.legend()
 plt.show()
 ```
 
-![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424234272943898664/WMHAfS8LOMQAAAABJRU5ErkJggg.png?ex=68e33507&is=68e1e387&hm=995da0e2cd28284cc35b32bc575cb2bd437a65966a2b94c587c0813ef99126c8&=&format=webp&quality=lossless&width=708&height=541)
+![Alt text](https://github.com/SarenFan/Second-Week-AIL303m/blob/main/Resource/WMHAfS8LOMQAAAABJRU5ErkJggg.webp?raw=true)
 
 ---
 
@@ -243,7 +243,7 @@ plt.grid(True, linestyle='--', alpha=0.5)
 plt.show()
 ```
 
-![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424237480856518748/rs455xxlNpuV2WxWGRkZauPGjaqoqGjE6xRCCCFEYGhKBegWlRBCCCGEEEIIIYSYMmRPISGEEEIIIYQQQogZSAaFhBBCCCGEEEIIIWYgGRQSQgghhBBCCCGEmIFkUEgIIYQQQgghhBBiBpJBISGEEEIIIYQQQogZSAaFhBBCCCGEEEIIIWYgGRQSQgghhBBCCCGEmIFkUEgIIYQQQgghhBBiBpJBISGEEEIIIYQQQogZSAaFhBBCCCGEEEIIIWYgGRQSQgghhBBCCCGEmIFkUEgIIYQQQgghhBBiBpJBISGEEEIIIYQQQogZ6P8HrAUosrtnbisAAAAASUVORK5CYII.png?ex=68e33804&is=68e1e684&hm=2a19aba7c6ebbb196bc2be7fd7b49f50bd36a2f201fb10113c36a757e6a4b654&=&format=webp&quality=lossless&width=1240&height=760)
+![Alt text](https://github.com/SarenFan/Second-Week-AIL303m/blob/main/Resource/rs455xxlNpuV2WxWGRkZauPGjaqoqGjE6xRCCCFEYGhKBegWlRBCCCGEEEIIIYSYMmRPISGEEEIIIYQQQogZSAaFhBBCCCGEEEIIIWYgGRQSQgghhBBCCCGEmIFkUEgIIYQQQgghhBBiBpJBISGEEEIIIYQQQogZSAaFhBBCCCGEEEIIIWYgGRQSQgghhBBCCCGEmIFkUEgIIYQQQgghhBBiBpJBISGEE.webp?raw=true)
 
 ---
 
@@ -323,7 +323,7 @@ plt.grid(True)
 plt.show()
 ```
 
-![Alt text](https://media.discordapp.net/attachments/1056943939464212542/1424238155996856461/jB0rBcuvWbIgAAAABJRU5ErkJggg.png?ex=68e338a5&is=68e1e725&hm=6b123f5fa2a008ce262738b339be49a9fa77f1522558846e918fa7b3f243b33c&=&format=webp&quality=lossless&width=1069&height=694)
+![Alt text](https://github.com/SarenFan/Second-Week-AIL303m/blob/main/Resource/jB0rBcuvWbIgAAAABJRU5ErkJggg.webp?raw=true)
 
 ---
 
